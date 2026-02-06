@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sports Players List</title>
+
+    <!-- ===== CSS ===== -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #90caf9, #a5d6a7);
+            color: #222;
+        }
+        header {
+            background: #0d47a1;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+        .sport-card {
+            background: #fff;
+            border-radius: 8px;
+            margin: 1rem 0;
+            padding: 1rem;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .sport-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 6px 12px rgba(0,0,0,0.2);
+        }
+        .sport-card h2 {
+            margin: 0.5rem 0;
+        }
+        .player-list {
+            list-style: none;
+            padding: 0;
+        }
+        .player-list li {
+            background: #e3f2fd;
+            margin: 0.4rem 0;
+            padding: 0.6rem;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        button {
+            background: #1565c0;
+            color: #fff;
+            border: none;
+            padding: 0.6rem 1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        button:hover {
+            background: #0d47a1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>🏆 Sports Players Directory</h1>
+        <p>Choose a sport & see its players!</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Soccer -->
+        <div class="sport-card">
+            <h2>⚽ Soccer</h2>
+            <button onclick="toggleList('soccer')">Show/Hide Players</button>
+            <ul id="soccer" class="player-list" style="display:none;">
+                <li>Lionel Messi</li>
+                <li>Cristiano Ronaldo</li>
+                <li>Neymar Jr.</li>
+                <li>Kylian Mbappé</li>
+            </ul>
+        </div>
+
+        <!-- Volleyball -->
+        <div class="sport-card">
+            <h2>🏐 Volleyball</h2>
+            <button onclick="toggleList('volleyball')">Show/Hide Players</button>
+            <ul id="volleyball" class="player-list" style="display:none;">
+                <li>Giba</li>
+                <li>Wilfredo León</li>
+                <li>Karch Kiraly</li>
+                <li>Earvin N’Gapeth</li>
+            </ul>
+        </div>
+
+        <!-- Football -->
+        <div class="sport-card">
+            <h2>🏈 Football</h2>
+            <button onclick="toggleList('football')">Show/Hide Players</button>
+            <ul id="football" class="player-list" style="display:none;">
+                <li>Tom Brady</li>
+                <li>Patrick Mahomes</li>
+                <li>Aaron Donald</li>
+                <li>Derrick Henry</li>
+            </ul>
+        </div>
+
+        <!-- Badminton -->
+        <div class="sport-card">
+            <h2>🏸 Badminton</h2>
+            <button onclick="toggleList('badminton')">Show/Hide Players</button>
+            <ul id="badminton" class="player-list" style="display:none;">
+                <li>Viktor Axelsen</li>
+                <li>Kento Momota</li>
+                <li>Carolina Marín</li>
+                <li>P. V. Sindhu</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- ===== JS ===== -->
+    <script>
+        function toggleList(id) {
+            const list = document.getElementById(id);
+            list.style.display = list.style.display === "none" ? "block" : "none";
+        }
+    </script>
+
+</body>
+</html>
